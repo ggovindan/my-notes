@@ -1,0 +1,39 @@
+nylas
+performance analysis tool in production
+https://github.com/spang
+
+Debugging python in production
+-------------------------
+Karim Hamidou
+
+    Tradition Unix tools
+    lsof
+    strace/ltrace
+    
+    attach to running process
+    py trace in gdb
+    py-bt
+    py-list
+    py-locals
+    
+Game camp
+----------
+LearnLeapFly.org
+
+Metaclass: auto generating test methods
+---------------------------
+
+Music in midi
+---------------
+
+https://github.com/vishnubob
+pigpio library for control of general purpose I/O http://abyz.co.uk/rpi/pigpio/python.html
+open sound control protocol
+
+old games
+-----
+https://github.com/dendygeeks/tanxees-arena
+
+pep8
+pep8 has become pepcodestyle
+

@@ -1,0 +1,84 @@
+Reinventing Django
+Andrew Godwin
+github.com/andrewgodwin/channels-examples
+
+Generally any django application is only handling request-response
+
+Http 2 you can send multiple requests at once and get multiple responses
+
+Websockets
+----------
+Send and receive whenever we want. It is a very different kind of interface
+
+problem 1
+ python concurency and django not being async
+ Message passing (very traditional way of concurrent programming)
+ 
+ WSGI server | -> WSGI APP
+             | <-
+             
+ websocket
+ -->|                 | worker
+ <--| protocol server | worker
+ -->|                 | worker
+ <--|
+ 
+ Channel layer solves when a blog post needs to be pushed to all the users 
+ -------------
+ 
+ Channels - named fifo task queue
+ 
+ Groups - names set ot channels you broadcase to . Group of channels
+ 
+ send("channel_name", {"ponies: True"}
+ 
+ --------
+ websocket.connect -> consumer
+ 
+ websocket.receive-> consumer -> websocket.send
+ 
+ Each of the websocket send willbe identified by a unique id websocket.send!ab124f. This is because in websockets we need to 
+ push one update to multiple clients
+ 
+ Receive events from channels, and send events to them/groups
+ websocket/Http messages come with reqply_channel
+ 
+ installation
+ --------
+ pip install channels
+ Add channels to INSTALLED_APPS
+ 
+ liveblog example
+ ----
+ we want people to get new blog posts as they are published, without refreshing
+ 
+ peop open a websocket when the open the page
+ their websocket is added to a group
+ when the blogpost
+ 
+def ws_connect(message):
+ grop("liveblog").add(add(message.reply_channel)
+ 
+ class BlogPost(models.Model)
+   def save(self, *args, **kwargs):
+     ...
+     Group("liveblog").send()
+     
+ exmple 2 chat:
+ ------
+ people can send message and everyone can see
+ when people join the chat
+ 
+ group.add(message.reply_channel)
+ 
+ we tell djanto what consuers are joined to which actions
+ routing.py
+ routing = []
+ 
+ ASGI
+ 
+ Interface server [Daphne(http+ws), wsgi adapter(http)]
+ channel layer [asgi_redis, asgi_ipc(single-machine)]
+ worker server [django, wsgi_adapter]
+ 
+ github.com/andrewgodwin/channels-examples

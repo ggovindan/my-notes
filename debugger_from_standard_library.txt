@@ -1,0 +1,16 @@
+Doug Hellmann
+
+github.com/dhellmann/smiley
+smiley.readthedocs.org
+
+features
+1. reacord calls with data
+2. remote monitoring, local analysis
+3. browse history
+4. learn new tools
+
+python trace APIs 
+(raw socket and remote execution)
+
+0MQ tools (WHAT IS IT? )
+

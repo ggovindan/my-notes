@@ -1,0 +1,54 @@
+Chloe Mawer
+silicon valley data science
+
+OpenCV
+    package for image processing.
+    great for realtime application
+
+
+idenfity if somehting is moving
+cmawer.githuhb.io/trainspotting
+
+cvtColor()
+GaussianBlur()
+
+cv2.absDiff() //gives idea of what changed between frames
+
+identify if it is a train
+
+realtime deployment
+-------------
+picamera package was used in raspberry pi
+
+PiCamera is a package available in raspberry pi. Picamera is easy to change background and contrast
+picamera package can do live analysis so that we dont have to save the video file.
+
+parameters to consider
+-------
+1. resolution + K
+change the k proportionality with the resolution. this has to be used with GaussianBlur Algo.
+
+2. Resolution + area_thresh
+This is needed to identify two point a, b and identify if an object is moving left or right
+
+3. frame rate + alpha
+how to weigh in each frame. 
+
+4. frame rate + history length
+
+5. frame rate limitation
+requires one frame with train present in only one ROI.
+IF you need to identify the movement faster then more frame rate is needed.
+
+6. what if light changes
+Background subtraction
+    frame differencing
+        good for indoors
+        very fast computationally
+    Alternative: adaptive background subtraction
+    
+
+
+
+
+

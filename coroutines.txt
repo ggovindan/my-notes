@@ -1,0 +1,44 @@
+GLOBAL INTERPRETER LOCK
+
+before asyncio there was twisted.
+
+asycio does - one event loop calling callbacks.
+
+the loop uses select() provided by the OS and calls the next task.
+if a task takes longer
+PYTHONASYNCIODEBUG=1 python3 example.py - this will print how much time each task its taking.
+
+create task creates an instance of a class Task(). 
+
+the Task class calls step and performs periodic progress keeping the CPU busy.
+
+wait()
+loop.run_until_complete(asycio.wait(task))
+
+you can catch exception and handle just like any method.
+
+shared state??
+
+aiohttp is implemented using asyncio
+
+aiomysql
+
+uvloop (for speed of execution)
+
+executors for speed if you are using third party library that takes a 
+long time you can use ThreadpoolExecutor or ProcessPoolExecutors
+
+thrift is used in facebook 
+
+random advice:
+use python3.5+
+write unit tests
+setup debugging
+----
+import gc
+gc.set_debug
+------
+
+fb.me/coroutines
+
+ 

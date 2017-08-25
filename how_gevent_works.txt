@@ -1,0 +1,35 @@
+python library for asyncio
+
+green threads
+
+CPython (GIL) da
+
+twisted works but the code is very complicated
+
+green threads
+OS does not ceate or manage them
+OS does not schedule or preempt
+Because of these 2 they are very light weight. it can process 20000 connection concurrents.
+
+gevent uses green threads
+g = gevent.Greenlet(download_photos, user)
+g.start()
+
+.switch() pauses the a routine and resumes if called again from where it left of.
+
+greenlet library is written in C. it works by manipulating the c stack.
+
+machine stack - that is where greenlet resides. python runs on interpreter stack
+
+and python sCPython
+
+stack slicing - if a() switches to b() after b completes and if a.switch() is called it copies the stack to a heap and copies it back
+into the c stack which the python stack does not know 
+
+
+https://greenlet.readthedocs.io/en/latest/
+
+ minus
+  - no parallism
+   - non-cooperate code will block the entire process
+    - monkey patching may have confusing.. the order of imports matter.

@@ -1,0 +1,46 @@
+Metaclasses
+http://github.com/di
+
+import types
+
+type(type)
+Class Type
+
+class FooClass(object):
+    pass
+    
+type(FooClass)
+>> <class type)
+
+>>type(42) is int
+True
+
+>>type(42)
+
+since class is a type we can instantiate type itself and create a class
+
+a class creation takes classname, super object, and properties
+
+
+j = type( "Fooclass", (object), {"i"=42})
+
+Metaclass returns a class
+
+class MyMeta(type):
+
+  def __new__(cls, *args, **kwargs):
+  
+  -------
+  from inspect import isfunction
+  class MetaDog(type):
+    def __new__(meta, name, bases, attr):
+        for name, attr, in attr.items():
+            if isfunction(attr):
+                attrs[name] = woof(attr)
+        return type.__new__()
+        
+  class Dog(metaclass=Metadog):
+   #This will create a class that will wrap it up with woof() decorator
+   
+   
+  http://github.com/di

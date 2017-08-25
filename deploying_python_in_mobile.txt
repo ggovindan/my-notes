@@ -1,0 +1,60 @@
+IOS
+
+Cpython Issue 23670
+how to use cpython without command line
+
+http://gihub/pybee/python-ios-template
+
+swift language introduced  by apple.
+
+Rubicon(can be used on desktop and mobile) - 
+pyobject c (for desktop)
+
+    from rubicon.objc import *
+
+    objective c
+    
+ Android
+ _______
+ java byte code. System.encode()
+ 
+ https://bitbucket.org/xdegaye/pyona/src
+ 
+   JYTHON
+   fully functioning 
+   
+   **dis module of python gives dis-assemble
+   
+   **import dis
+   
+   **VOC is a convereter that can convert python to Java
+   reference python classes in java and vice versa
+   
+   from android.widget import LIstView
+   class MainActivity(extends = adroid.app.Activity):
+    def on 
+    
+    
+   https://github.com/pybee/python-android-template
+   
+   *****Kivy tool for drawing UI in cross platform
+   Toga - widget platform. wrapper around system native calls. 
+   
+   import toga
+   class TodoApp(toga.App):
+    def startup()
+    
+ Packaging:
+ ----------
+ pip install briefcase
+ python setup.py ios
+ python setup.py android
+ 
+    Finally a demo of app developed in python
+    bit.ly/toga-mobile-demo
+    
+ Future:
+ ------
+ BeeWare (the Ide of Python) contribute to Beeware
+ 
+ pybee.org   

@@ -1,0 +1,55 @@
+https://www.ahl.com/ Paul Ross works for man AHL
+
+https://github.com/manahl/artic
+
+https://github.com/paulross - great tutorial on valgrind etc (coding patterns)
+twitter.com/manahltech
+
+---
+every pyton object has a referece count
+when it is created it has ref count of 1
+when it is 0 it is deallocated
+
+how is owrks in pytyon
+
+python has garbage collection
+
+coding patter to keep the dragons at bay
+
+kinds of PYObject* used in CPython
+
+Things to avoid
+------
+
+Pymemory leaks
+
+#include "Python.h"
+void Py_leak()
+{
+PyObject *pObj;
+pObj = PyBytes_fromString(""hello world);
+PyObject_Print(pObj, stdout, 0);
+Py_DECREF(pObj);
+
+memory leaks and access after leaks are main things to keep in mind while writing cPython
+
+3 Reference Tyes
+------
+New references occur when PyObject is created
+
+Stolen reference occur when PyObject is created and assigned. Typically setters
+
+Borrowed reference are used when getting a PyObject
+
+probgramming by contract
+-------
+New PyObject* your job to deallocated it
+
+stolen Pyobject* the theif
+
+borrowed references
+------------
+For borrowed reference you shoudl use py_Incref and Py_Decref when youa re interested in a value else we have segfault
+
+
+https://github.com/paulross
