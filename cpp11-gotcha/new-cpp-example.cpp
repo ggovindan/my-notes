@@ -44,6 +44,13 @@ public:
 
     return *this;
   }
+
+  //A copy constructor
+  T (const T& rhs): x(0), name("temp") {
+    cout << "inside copy constructor\n";
+    x = rhs.x;
+    name = rhs.name;
+  }
 };
 
 T MyFunc(T t) {
@@ -53,6 +60,13 @@ T MyFunc(T t) {
 
 int main(void) {
   cout<<"Inside Main\n";
-  T t = MyFunc(T());
+
+  //creating the function argument for MyFunc as a rvalue so that move constructor is invoked
+  T t1 = MyFunc(T());
+
+  cout << "creating local object\n";
+  //creating a local object so that MyFunc get lvalue implicitly invoking copy constructor when calling MyFunc()
+  T t2 = T();
+  MyFunc(t2);
   return 0;
 }
