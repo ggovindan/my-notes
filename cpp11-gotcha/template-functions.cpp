@@ -1,4 +1,5 @@
 #include<iostream>
+#include<array>
 
 using namespace std;
 
@@ -34,14 +35,14 @@ void f(T& param) {
 // -- constexpr is a keyword that will make its results available during compile time
 //        hence making us declare something like this int MyArray[arraySize(someArray)];
 // -- noexcept is a keyword that helps compilers generate better code.
-// template<typename t, std::size_t N>
-// constexpr std::size_t arraySize(T (&dip)[N]) noexcept {
-//   return N;
-// }
-
-constexpr std::size_t arrSize(int (&dip)[7]) noexcept {
-  return 10;
+template<typename t, std::size_t N>
+constexpr std::size_t arraySize(T (&dip)[N]) noexcept {
+  return N;
 }
+
+// constexpr std::size_t arrSize(int (&dip)[7]) noexcept {
+//   return 10;
+// }
 
 int main(void) {
   int a = 10, b = 13;
@@ -59,8 +60,8 @@ int main(void) {
   //Here dipoza method is taking values as pass by value hence even if you pass ca, cb, T will be int and ParamType will be int and not references
   cout << "calling template by value="<<dipoza(ca, cb)<<endl;
 
-  int keyVal = [1, 2, 3, 4, 5, 6, 6];
-  std::array<int, arrSize(keyVal)> myTempArray;
+  int keyVal[] = {1, 2, 3, 4, 5, 6, 6};
+  std::array<int, arraySize(keyVal)> myTempArray;
 
   cout<<"size of myTempArray="<<myTempArray.size();
 }
