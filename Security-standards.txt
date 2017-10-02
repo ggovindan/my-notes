@@ -1,0 +1,56 @@
+Security standards
+1. Logging must not post personal information. (all the username and passwords my be ***) 
+2. Managing requests must only be through tracking id (have a tracking id to follow up on transactions and linking them)
+3. Do not forward http urls when sending emails. Always https (dont use http)
+4. Apply rate limiting to all endpoints. (rate limiting should be implemented to prevent service denial)
+5. Minimum password length requirements (passwords entered must be of minimum length per companies policy)
+6. Brute-force prevention (have a count and check for this count when a password is entered)
+
+8. Web sessions dooes not expire
+(The lack of proper session expiration may be reason for certain attacks. For example an attacker may intercept a session ID, possibly via a network sniffer.
+Although short sessions expiration times do not help if a stolen token is immediatly used, they will protect against ongoing replaying of session ID. Anoth scenario could be if a shared computer is used an attacker can use the browsers back button to access web pages previously accessed by the victim.)
+9. Profile image allows large file sizes (this is another way an attack can happen. They can upload a really large file for profile of any attachment and can slow down or eat away our resources. Hence need to make sure that there is a size limit to file uploads)
+10. 
+
+
+To Study:
+
+Web sessions.
+How to setup tracking ID
+Oauth
+In NodeJS what is the difference between === and ==
+when to use PUT and POST requests (use put when creating or updating a resource and when the endpoint url is going to be a different one. 
+use POST when the URL is going to be the same for create or update 
+eg. PUT: /data/<new customer> /data/<old customer>
+eg. POST: /data/)
+
+C interview
+-------------
+1. Threads (various kinds of threads, read lock, write lock, mutexes etc).
+2. design patterns
+3. socket programming (understand the various include files and the sequence. write code and practice)
+4. linked list, datastructures(binary search tree), sorting algorithms
+5. strings.
+6. malloc, free
+
+
+python interview
+-----------------
+1. go through biston code to understand how the TCP/UDP is implemented.
+2. understand meta classes
+
+NodeJS interview
+----------------
+1. ==, ===
+2, socket.io
+3. OAUTH
+5. 
+
+Docker interview
+------------------
+1. go through the book
+2. understand the varios debugging techniques, command line options
+
+
+Shell scripting
+-----------------
